@@ -1,0 +1,27 @@
+<button class= "card" id="card-0">0</button>
+<button class= "card" id="card-1">1</button>
+<button class= "card" id="card-2">2</button>
+<button class= "card" id="card-3">3</button>
+<button class= "card" id="card-5">5</button>
+<button class= "card" id="card-8">8</button>
+<button class= "card" id="card-13">13</button>
+<button class= "card" id="card-21">21</button>
+<button class= "card" id="card-34">34</button>
+<button class= "card" id="card-55">10</button>
+<button class= "card" id="card-89">89</button>
+<button class= "card" id="card-?">?</button>
+
+<script type="text/javascript">
+    var elements = document.getElementsByClassName("card");
+    for (i = 0; i < elements.length; i ++)
+    {
+        (function(){
+            var cardValue = elements[i].innerHTML
+            elements[i].onclick = function () {
+                var ourRequest = new XMLHttpRequest();
+                ourRequest.open("POST","http://localhost:5000/PokerSession/RecieveVote/" + cardValue);
+                ourRequest.send();
+                location.href = "http://localhost:5000/PokerSession/WaitingScreen";};
+        }());
+    };
+</script> 

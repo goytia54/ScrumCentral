@@ -1,0 +1,12 @@
+<button id="start-button">Start Poker Session</button>
+
+<script type="text/javascript">
+    
+    document.getElementById("start-button")= function () {
+            var ourRequest = new XMLHttpRequest();
+            ourRequest.open("POST","http://localhost:5000/PokerSession/CreateSession);
+            ourRequest.send();
+            //get information from get function
+            location.href = "http://localhost:5000/PokerSession/WaitingScreen";};
+    
+</script> 
