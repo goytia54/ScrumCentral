@@ -15,10 +15,6 @@ namespace ScrumCentral.Controllers
         MongoDbHandler dbHandler = MongoDbHandler.Instance;
         public IActionResult Index()
         {
-            PokerSession pokerSession = new PokerSession();
-            pokerSession.Name = "Michael";
-            pokerSession.TotalCount = 10;
-            dbHandler.InsertPokerSession(pokerSession);
             return View();
         }
 
