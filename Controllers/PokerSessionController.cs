@@ -51,7 +51,7 @@ namespace ScrumCentral.Controllers
 
         public IActionResult DisplayScreen(string sessionName)
         {
-            return View();
+            return View((object)sessionName);
         }
 
         [HttpGet]

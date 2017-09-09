@@ -1,10 +1,14 @@
+@model string;
+@using ScrumCentral.Helpers;
+
 <p>
     <h1>Display Screen</h1>
 </p>
 
 <script>
+    var sessionName = @JavaScriptConvert.SerializeObject(Model);
     var pokerSessionRequest = new XMLHttpRequest();
-    pokerSessionRequest.open('GET','http://localhost:5000/PokerSession/UpdatedPokerSession?sessionName=chad')
+    pokerSessionRequest.open("GET","http://localhost:5000/PokerSession/UpdatedPokerSession?sessionName=")
     pokerSessionRequest.onload = function() {var ourData = JSON.parse(pokerSessionRequest.responseText);
                                             console.log(ourData);}
     pokerSessionRequest.send();

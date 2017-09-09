@@ -41,11 +41,6 @@ namespace ScrumCentral.Helpers
             PokerSession pokerSession = collection.Find(x => x.Name == session).First();
             return pokerSession;
         }
-
-
-        
-
-
     }
 
 }
