@@ -1,3 +1,11 @@
 <p>
     <h1>Display Screen</h1>
 </p>
+
+<script>
+    var pokerSessionRequest = new XMLHttpRequest();
+    pokerSessionRequest.open('GET','http://localhost:5000/PokerSession/UpdatedPokerSession?sessionName=chad')
+    pokerSessionRequest.onload = function() {var ourData = JSON.parse(pokerSessionRequest.responseText);
+                                            console.log(ourData);}
+    pokerSessionRequest.send();
+</script>

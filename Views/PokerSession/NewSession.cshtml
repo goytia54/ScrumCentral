@@ -16,6 +16,7 @@
         createSessionRequest.open("POST","http://localhost:5000/PokerSession/StartSession?sessionName="+sessionName)
         console.log(createSessionRequest);
         createSessionRequest.send(); 
+        location.href="http://localhost:5000/PokerSession/DisplayScreen?sessionName="+sessionName
     });
 </script>
 

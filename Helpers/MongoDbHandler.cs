@@ -33,6 +33,15 @@ namespace ScrumCentral.Helpers
             collection.InsertOne(session);
         }
 
+        public PokerSession GetPokerSession(string session)
+        {
+            _client = new MongoClient(db);
+            _database = _client.GetDatabase("local");
+            var collection = _database.GetCollection<PokerSession>("test");
+            PokerSession pokerSession = collection.Find(x => x.Name == session).First();
+            return pokerSession;
+        }
+
 
         
 

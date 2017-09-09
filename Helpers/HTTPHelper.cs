@@ -28,6 +28,12 @@ namespace ScrumCentral.Helpers
             PokerSession newPokerSession = new PokerSession() {Name = sessionName};
             dbHandler.InsertPokerSession(newPokerSession);
         }
+
+        public PokerSession GetCurrentSession(string sessionName)
+        {
+            PokerSession pokerSession = dbHandler.GetPokerSession(sessionName);
+            return pokerSession;
+        }
     }
 
 }
