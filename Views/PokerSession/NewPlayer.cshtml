@@ -1,0 +1,21 @@
+<p>
+    <div>
+        Name of Session: <input type="text" id="sessionName"></input>
+        <input type="submit" id="sessionNameSubmit"> </input>
+    </div>
+</p>
+
+<script>
+    var sessioNameSubmit = document.getElementById("sessionNameSubmit");
+    console.log(sessioNameSubmit);
+    sessioNameSubmit.addEventListener("click",function()
+    {
+        var sessionName = document.getElementById("sessionName").value;
+        console.log(typeof(sessionName));
+        var createSessionRequest = new XMLHttpRequest();
+        createSessionRequest.open("POST","http://localhost:5000/PokerSession/StartSession?sessionName="+sessionName)
+        console.log(createSessionRequest);
+        createSessionRequest.send(); 
+        location.href="http://localhost:5000/PokerSession/DisplayScreen?sessionName="+sessionName
+    });
+</script>
